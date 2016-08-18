@@ -11,7 +11,11 @@ import {
 let ScreenWidth = Dimensions.get("window").width;
 
 class Header extends Component {
-
+/*
+* the head for update pic
+* you can set width and height
+* 
+* */
   render() {
     return (
       <Image
@@ -25,7 +29,7 @@ class Header extends Component {
 const styles = StyleSheet.create({
   div1: {
     width:ScreenWidth,
-    height:ScreenWidth*0.72,
+    height:260,
     resizeMode:'cover',
   },
 });
