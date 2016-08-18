@@ -1,6 +1,7 @@
 # ReadingReactNative  @author yingyingmetest 
 Is my first rn object ,if you like facebook reactnative ,but maybe you can not known how to do it ,so that it,s a simple project ject for you.<br/>
 
+![github](https://github.com/xiawanyingtest/ReadingNewsRecNative/blob/master/Screenshot_2016-08-18-14-01-59.png "github") 
 how to run it <br/>
 if you don,t haven the mac ,but you want to run it ,just like it to run. <br/>
 1. you need have nodejs (nodejs>4.0) and python (but python shoud <3.0), the android studio or idea you should use it,the ANDROID_HOME you must have . <br/>
