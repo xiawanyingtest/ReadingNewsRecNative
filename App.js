@@ -8,13 +8,29 @@ import React, { Component } from 'react';
 import {
     AppRegistry,
     Navigator,
+    BackAndroid,
 } from 'react-native';
+
+var _navigator;
+
+BackAndroid.addEventListener('hardwareBackPress', function() {
+    if(_navigator == null){
+        return false;
+    }
+    if(_navigator.getCurrentRoutes().length === 1){
+        return false;
+    }
+    _navigator.pop();
+    return true;
+});
 
 var MainPage = require('./app/main/mainpage');
 
 class Root extends Component {
 
     renderScene(route, navigator) {
+
+        _navigator = navigator;
 
         let Component = route.component;
         return <Component {...route.params} navigator={navigator}/>
