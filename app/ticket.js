@@ -36,17 +36,17 @@ class MovieTicket extends Component {
     render() {
         return (
             <View>
-                /*bg 背景*/
+             
                 <Image
                     style={styles.div1}
                     source={{uri: 'http://pic5.qiyipic.com/common/20160531/MOSHOU-H5-CONBG_02.jpg'}}
                 />
-                /*center 中心*/
+            
                 <Image
                     style={styles.div2}
                     source={{uri: 'http://pic1.qiyipic.com/common/20160601/MOSHOU-PC-juxing.png'}}
                 />
-                /*transform 旋转动画*/
+        
                 <Animated.Image
                     style={[styles.div3, {transform: [{
                     rotate:this.state.rotateValue.interpolate({
