@@ -6,7 +6,7 @@ import {
     AppRegistry,
     StyleSheet,
     Dimensions,
-
+    ScrollView,
     View,
     Text,
     Image,
@@ -77,7 +77,8 @@ class MainPage extends Component {
         }
 
         return (
-                <View style={styles.container}>
+
+                <ScrollView style={styles.container}>
                     <ToolbarAndroid
                         title={'知乎日报'}
                         titleColor='rgb(0, 130, 215)'
@@ -85,7 +86,7 @@ class MainPage extends Component {
                         onIconClicked={()=>this.refs.drawer.openDrawer()} />
                     <MainViewPager pagerdata={this.state.top_stories} navigator={this.props.navigator}/>
                     <MainList listdata={this.state.stories} navigator={this.props.navigator}/>
-                </View>
+                </ScrollView>
 
         );
     };
