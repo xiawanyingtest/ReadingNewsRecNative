@@ -11,6 +11,7 @@ import {
     Image,
     ListView,
     TouchableNativeFeedback,
+    TouchableHighlight,
 } from 'react-native';
 
 var News = require('../detail/news');
@@ -50,16 +51,41 @@ class MainList extends Component {
 
     _renderRow(story){
         return(
-            <TouchableNativeFeedback onPress={() => this._onPressItem(story.id)}>
+            <TouchableHighlight
+                //按下后背景透明度变化
+                activeOpacity={0.7}
+                //按下后背景颜色
+                underlayColor={'gray'}
+                onPress={() => this._onPressItem(story.id)}>
+
                 <View style={styles.item}>
                     <Text style={styles.itemtext}>{story.title}</Text>
                     <Image style={styles.listimg}
                            source={{uri: story.images[0]}}
                     />
+
+                </View>
+
+            </TouchableHighlight>
+        );
+    }
+
+  /*  _renderRow(story){
+        return(
+            <TouchableNativeFeedback onPress={() => this._onPressItem(story.id)}>
+                <View>
+                    <View style={styles.item}>
+                        <Text style={styles.itemtext}>{story.title}</Text>
+                        <Image style={styles.listimg}
+                               source={{uri: story.images[0]}}
+                        />
+
+                    </View>
+                       <View style={styles.separator} />
                 </View>
             </TouchableNativeFeedback>
         );
-    }
+    }*/
 
     _onPressItem(id){
         fetch(NEWS_LINK+id).then((response) => response.json())
@@ -78,7 +104,11 @@ class MainList extends Component {
 const styles = StyleSheet.create({
     list: {
         flexDirection: 'column',
-        backgroundColor:'white',
+        //backgroundColor:'white',
+    },
+    separator: {
+        height: 1,
+        backgroundColor: '#CCCCCC',
     },
     item: {
         margin: 5,
